@@ -32,7 +32,7 @@ int fromchartoint(char g){
         return 62;
     else
         return 63;
-}
+}// ci sono solo 64 caratteri ammissibili, queste due funzione convertono le lettere di tipo char 0-9(codificati in base alla tabella dei char con 48-57), a-z(codificati con 48-57), A-z(codificati con 65-90), "-" e "_" in indici interi che sono uno di seguito all'altro, e viceversa,  per semplificare i diversi controlli (es ciclo for)
 int precordinelex(char*stringa1, char*stringa2, int k){
     int i=0;
     while(i<k){
@@ -44,7 +44,7 @@ int precordinelex(char*stringa1, char*stringa2, int k){
             i++;
     }
     return 0;
-}
+}//date due stringhe stabilisce se la prima stringa precede la seconda (return 1) o meno(return 0)
 int stessastringa(char* stringa1, char* stringa2, int k){
     int i=0;
     while(i<k){
@@ -53,7 +53,7 @@ int stessastringa(char* stringa1, char* stringa2, int k){
         i++;
     }
     return 1;
-}
+}//stabilisce se due stringhe sono uguali
 int searchstringa(struct bst T, char* stringa, int k){
     struct Nodo* punt;
     punt = T.root;
@@ -66,7 +66,7 @@ int searchstringa(struct bst T, char* stringa, int k){
             punt=punt->right;
     }
     return 0;
-} // O(h)
+} // O(h), data una stringa in input stabilisce se questa si trova nell'albero
 void aggiungifil(struct Nodo** reftesta, struct Nodo* nodoconstringa) {
     struct Nodo* punt=nodoconstringa;
     if((*reftesta)==NULL)
@@ -77,7 +77,7 @@ void aggiungifil(struct Nodo** reftesta, struct Nodo* nodoconstringa) {
         (*reftesta)=punt;
     }
 }
-// O(1)
+// O(1), aggiunge in cima alla lista interna un dato nodo con una stringa già contenuta
 void confronta(int k, char* parolariferimento, char* parolainserita, char* filtro, char*gratina, char memoria[k][64], char* temprifpermem, unsigned short* beccate, char* mem2) {
     char character, ch, arraysupp[64]={0}, arraysup2[64]={0};
     int i = 0, ind, ind2;
@@ -133,7 +133,7 @@ void confronta(int k, char* parolariferimento, char* parolainserita, char* filtr
     }
 
 }
-// O(2k)
+// O(2k), funzione chiamata per ogni parola "giocata": parolariferimento è la parola da indovinare, parolainserita è la parola inserita dal giocatore, filtro è la stringa di +,/ e | da stampare, gratina è un array di supporto inizializzato con '<' che tiene traccia delle lettere "beccate" dal giocatore
 void confronta2(int k, char* parolariferimento, char* parolainserita, char* filtro, char*gratina, char memoria[k][64]){
     char character, ch, arraysupp[64]={0};
     int i = 0, ind, ind2;
