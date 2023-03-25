@@ -361,7 +361,7 @@ struct Nodo *cancelladallalista(struct Nodo* testa,char* parolains, char*filtro,
                 temp->listainternasucc=NULL;
                 temp->listainternaprec=NULL;
                 (*p)--;
-            }//da sistemare
+            }
             if(prec==NULL){
                 testa=miao;
                 miao->listainternaprec=NULL;
