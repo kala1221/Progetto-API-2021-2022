@@ -171,7 +171,7 @@ void confronta2(int k, char* parolariferimento, char* parolainserita, char* filt
         i++;
     }
 }
-// O(2k)
+// O(2k), versione semplificata della funzione precedente nel caso in cui il giocatore sappia ormai quali e quante volte appaiono le lettere nella parola da indovinare.
 struct Nodo* creanodo(struct bst T,char* stringaa, int k){
     struct Nodo *q;
     q=(struct Nodo*)malloc(sizeof(struct Nodo));
@@ -204,10 +204,9 @@ void aggiungifilordinatamente(struct Nodo** reftesta, struct Nodo* punt, int k){
             punt->listainternaprec=prec;
         }
     }
-}
+}//aggiunge nella corretta posizione alfabetica una stringa nella lista interna all'albero
 void aggiungialvocab(struct Nodo** refroot, struct Nodo* z, int k) {
     struct Nodo *x, *y;
-    //miao=creanodo(stringaaa, k);
     x = (*refroot);
     y=NULL;
     while (x != NULL) {
@@ -225,7 +224,7 @@ void aggiungialvocab(struct Nodo** refroot, struct Nodo* z, int k) {
         y->right = z;
     z->left=NULL;
     z->right=NULL;
-}
+}//aggiunge una parola nell'albero, in ordine alfabetico
 void stampainordinedalista(struct Nodo* testa){
     struct Nodo* curr;
     curr=testa;
@@ -237,7 +236,6 @@ void stampainordinedalista(struct Nodo* testa){
 void aggiungialvocab2(struct Nodo** refroot,struct Nodo** reftesta, struct Nodo* z, int k) {
     struct Nodo *x= (*refroot), *y, *temp=NULL, *temp2=NULL;
     char control=0;
-    //miao=creanodo(stringaaa, k);
     y=NULL;
     while (x != NULL) {
         y=x;
@@ -291,8 +289,7 @@ void aggiungialvocab2(struct Nodo** refroot,struct Nodo** reftesta, struct Nodo*
         y->left = z;
     else
         y->right = z;
-}
-//O(h)
+}//O(h), funzione che mi ha permesso di velocizzare di molto l'algoritmo: mentre aggiungo una stringa nell'albero, controllo se scorrendo riesco a beccare una stringa che è anche contenuta nella lista interna, se sì mi salvo il riferimento al nodo, così da poter aggiungere più velocemente la stringa appena inserita. Se mentre scendo ne becco un'altra, allora salvo il riferimento a quella. Alla fine avrò salvato una stringa che è molto "vicina" alfabeticamente alla stringa che sto inserendo, permettendo così di inserire più velocemente la nuova stringa nella lista interna.
 void stampainordineint(struct bst T,struct Nodo* n){
     if(n!=NULL){
         stampainordineint(T, (*n).left);
