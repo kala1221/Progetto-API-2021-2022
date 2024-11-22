@@ -7,8 +7,8 @@ In this project, the main objective was to implement a word-guessing game that i
 ## Data Structures Used:
 Binary Search Tree (BST):
 
-## Purpose: The BST is used to store and manage the vocabulary of allowable words efficiently.
-##Advantages:
+### Purpose: The BST is used to store and manage the vocabulary of allowable words efficiently.
+#### Advantages:
 Allows for quick insertion and search operations, typically O(log n) on average.
 Since the vocabulary can be large, using a BST helps in keeping these operations fast.
 Implementation Details:
@@ -16,8 +16,8 @@ Each node in the BST contains a word from the vocabulary.
 Nodes are arranged lexicographically to facilitate quick searches.
 Doubly Linked List:
 
-## Purpose: The nodes of the BST are also part of a doubly linked list, which maintains the list of words that have passed the filtering based on the clues provided so far in the game.
-##Advantages:
+### Purpose: The nodes of the BST are also part of a doubly linked list, which maintains the list of words that have passed the filtering based on the clues provided so far in the game.
+#### Advantages:
 Efficient addition and removal of nodes from the list.
 Maintains an ordered sequence of possible words that can be quickly traversed and updated.
 Implementation Details:
